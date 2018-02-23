@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>template使用</title>
+    <!--导入引擎模板-->
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        {{ message}}
+    </div>
+  
+    <script>
+        var app= new Vue({
+            el:'#content',
+            data:{
+                message:'Hello,World!'
+            }
+        });
+    </script>
+</body>

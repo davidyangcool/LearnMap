@@ -30,5 +30,10 @@ def getlocations():
 @app.route('/temp',methods=['GET'])
 def temp():
     return app.send_static_file('temp.html')
+
+
+@app.route('/test', methods=['GET'])
+def test():
+    return app.send_static_file('test.html')
 if __name__=="__main__":
     app.run(host='0.0.0.0')
