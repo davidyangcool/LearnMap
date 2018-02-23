@@ -24,15 +24,20 @@
             map = new AMap.Map('container', {
                 resizeEnable: true
             });
-    $.ajax({ 
-    type: 'GET', 
- url:'http://58.242.107.76:5000/locations',
-   dataType: 'json', 
-    success: function(data) {
- locations=data.locations;
- line=new AMap.Polyline({
-    map:map,
-    path:locations,
+            $.ajax({ 
+            type: 'GET', 
+            url:'http://58.242.107.76:5000/locations',
+            dataType: 'json', 
+            success: function(data) {
+            locations=data.locations;
+            line=new AMap.Polyline({
+            map:map,
+            path:locations,
+            strokeColor: "#3366FF", //线颜色
+            strokeOpacity: 1,       //线透明度
+            strokeWeight: 8,        //线宽
+            strokeStyle: "solid",   //线样式
+            lineJoin:'round'//
  });
  //console.log(locations[0]['lat']);
 /*
@@ -43,9 +48,9 @@
  });
   }
   */
- console.log(data.locations)
-     }, error: function(xhr, type) { 
-console.log("获取数据错误")
+            console.log(data.locations)
+             }, error: function(xhr, type) { 
+            console.log("获取数据错误")
      } }); 
             
             map.plugin('AMap.Geolocation', function () {

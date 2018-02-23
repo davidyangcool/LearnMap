@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+<script src="js/art-template.js"></script>
+<script id="test" type="text/html">
+    {{if data}}
+    <h2>{{ data.title }}</h2>
+    {{/if}}
+</script>
+<script>
+var data = { title:"hello world" }; 
+var html = template("test",data); 
+document.getElementById('content').innerHTML = html;
+</script>
+    <h1>这是一个静态文件</h1>
+</body>
+</html>
